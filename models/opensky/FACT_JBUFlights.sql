@@ -14,7 +14,6 @@ with source_data as (
       icao24,
       (CASE WHEN left(callsign, 3)='JBU' then 'B6' else NULL end) as FlightCarrierCode,
       REPLACE(callsign,'JBU','')  as FlightNumber,
-      origin_country,
       to_timestamp(cast(time_position as integer)) as Last_position_update,
       to_timestamp(cast(last_contact as integer)) as Last_update,
       Longitude,
